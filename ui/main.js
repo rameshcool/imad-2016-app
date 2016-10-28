@@ -1,4 +1,4 @@
-/*console.log('Loaded!');
+console.log('Loaded!');
 
 //change the text of the main-text div
 var element = document.getElementById("main-text");
@@ -14,10 +14,10 @@ function moveRight () {
 img.onclick = function() {
     var interval = setInterval(moveRight, 50);
     
-};*/
+};
 
 //Counter Code
-var button = document.getElementById("counter");
+var button = document.getElementById('counter');
 
 button.onclick = function() {
     
@@ -31,7 +31,7 @@ button.onclick = function() {
           //Take some action
           if(request.status === 200) {
               var counter = request.responeText;
-              var span = document.getElementById("count");
+              var span = document.getElementById('count');
               span.innerHTML = counter.toString();
           }
       }
