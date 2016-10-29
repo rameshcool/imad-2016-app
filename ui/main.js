@@ -53,7 +53,7 @@ submit.onclick = function() {
     var names = ['Windows', 'Mac OSX', 'Linux', 'Android'];
     var list = '';
     for(i=0;i<names.length;i++) {
-        list += '<li>' + nmaes[i] + '</li>';
+        list += '<li>' + names[i] + '</li>';
     }
     var ul = document.getElementById('namelist');
     ul.innerHTML = list;
