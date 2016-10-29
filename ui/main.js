@@ -42,3 +42,19 @@ button.onclick = function() {
     request.open('GET', 'http://rameshcool.imad.hasura-app.io/counter', true);
     request.send(null);
 };
+
+//Submit name
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+submit.onclick = function() {
+    //Make a request to the server and send the name
+    //Capture a list of names and render it as a list
+    var names = ['Windows', 'Mac OSX', 'Linux', 'Android'];
+    var list = '';
+    for(i=0;i<names.length;i++) {
+        list += '<li>' + nmaes[i] + '</li>';
+    }
+    var ul = document.getElementById('namelist');
+    ul.innerHTML = list;
+};
