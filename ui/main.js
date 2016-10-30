@@ -66,15 +66,7 @@ submit.onclick = function() {
     }
     var ul = document.getElementById('namelist');
     ul.innerHTML = list;
-          }
-      }
-      //Not done yet
-    };
-    
-    //Make the request
-    request.open('GET', 'http://rameshcool.imad.hasura-app.io/submit-name?name=' + name, true);
-    request.send(null);
-
+     
           }
       }
       //Not done yet
