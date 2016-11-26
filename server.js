@@ -89,7 +89,7 @@ app.get('/hash/:input', function(req, res) {
   
   app.post('/login', function(req, res) {
        var username = req.body.username;
-    var password = req.body.password;
+       var password = req.body.password;
     
         pool.query('SELECT * FROM "users" WHERE username = $1' , [username], function(err, result) {
       if (err) {
@@ -100,8 +100,8 @@ app.get('/hash/:input', function(req, res) {
          } else {
              //match the password
              var dbString = result.rows[0].password;
-        var salt = dbString.split('$')[2];
-        var hashedPassword = hash(password, salt); //Creating a hash based on the password submitted and the original salt
+             var salt = dbString.split('$')[2];
+             var hashedPassword = hash(password, salt); //Creating a hash based on the password submitted and the original salt
         if (hashedPassword === dbString) {
          res.send('credentials correct!');
          
