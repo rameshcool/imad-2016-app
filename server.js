@@ -81,6 +81,20 @@ app.get('/hash/:input', function(req, res) {
       if (err) {
          res.status(500).send(err.toString());
      } else {
+         
+         res.send("User Successfully Created: " + username);
+     }    
+    });
+  });
+  
+  app.post('/login', function(req, res) {
+       var username = req.body.username;
+    var password = req.body.password;
+    
+        pool.query('SELECT * FROM "users" WHERE username = $1' , [username], function(err, result) {
+      if (err) {
+         res.status(500).send(err.toString());
+     } else {
          if (result.rows.length === 0) {
              res.send(403).send('username/password is invalid');
          } else {
@@ -98,19 +112,7 @@ app.get('/hash/:input', function(req, res) {
              res.send(403).send('username/password is invalid');
          }
          }
-     }    
-    });
-  });
-  
-  app.post('/login', function(req, res) {
-       var username = req.body.username;
-    var password = req.body.password;
-    
-        pool.query('SELECT * FROM "users" WHERE username = $1' , [username], function(err, result) {
-      if (err) {
-         res.status(500).send(err.toString());
-     } else {
-         res.send("User Successfully Created: " + username);
+        
      }    
     });
         });
