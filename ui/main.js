@@ -15,7 +15,7 @@ img.onclick = function() {
     var interval = setInterval(moveRight, 50);
     
 };
-/*//Counter Code
+//Counter Code
 var button = document.getElementById('counter');
 
 button.onclick = function() {
@@ -34,7 +34,7 @@ button.onclick = function() {
           }
       }
       //Not done yet
-    };*/
+    };
     
 //Make the request
     request.open('GET', 'http://rameshcool.imad.hasura-app.io/counter', true);
