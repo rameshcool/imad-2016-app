@@ -1,8 +1,8 @@
 console.log('Loaded!');
 
-//change the text of the main-text div
+/*//change the text of the main-text div
 var element = document.getElementById("main-text");
-//element.innerHTML = "My Page";
+element.innerHTML = "My Page";
 
 //move the image
 var img = document.getElementById("madi");
@@ -14,7 +14,7 @@ function moveRight () {
 img.onclick = function() {
     var interval = setInterval(moveRight, 50);
     
-};
+};*/
 //Counter Code
 var button = document.getElementById('counter');
 
