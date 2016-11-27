@@ -16,7 +16,7 @@ img.onclick = function() {
     
 };*/
 //Counter Code
-var button = document.getElementById('counter');
+/*var button = document.getElementById('counter');
 
 button.onclick = function() {
  //Create a request object
@@ -39,7 +39,7 @@ button.onclick = function() {
 //Make the request
     request.open('GET', 'http://rameshcool.imad.hasura-app.io/counter', true);
     request.send(null);
-};
+};*/
 
 //Submit username/password to login
 
