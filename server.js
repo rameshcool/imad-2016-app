@@ -135,7 +135,7 @@ app.get('/hash/:input', function(req, res) {
         
         app.get('/logout', function(req, res) {
             delete req.session.auth;
-            res.send('You are not logged in');
+            res.send('Logged out');
         });
 
 var pool = new Pool(config);
