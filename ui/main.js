@@ -16,7 +16,7 @@ img.onclick = function() {
     
 };*/
 //Counter Code
-var button = document.getElementById('counter');
+/*var button = document.getElementById('counter');
 
 button.onclick = function() {
  //Create a request object
@@ -41,7 +41,7 @@ button.onclick = function() {
     request.send(null);
 };
 
-
+*/
 //Submit username/password to login
 
 var submit = document.getElementById('submit_btn');
