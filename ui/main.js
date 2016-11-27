@@ -1,6 +1,6 @@
 console.log('Loaded!');
 
-/*//change the text of the main-text div
+//change the text of the main-text div
 var element = document.getElementById("main-text");
 element.innerHTML = "My Page";
 
@@ -14,8 +14,8 @@ function moveRight () {
 img.onclick = function() {
     var interval = setInterval(moveRight, 50);
     
-};*/
-/*//Counter Code
+};
+//Counter Code
 var button = document.getElementById('counter');
 
 button.onclick = function() {
@@ -40,7 +40,7 @@ button.onclick = function() {
     request.open('GET', 'http://rameshcool.imad.hasura-app.io/counter', true);
     request.send(null);
 };
-*/
+
 //Submit username/password to login
 
 var submit = document.getElementById('submit_btn');
