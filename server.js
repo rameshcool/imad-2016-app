@@ -135,11 +135,11 @@ app.get('/hash/:input', function(req, res) {
         
         app.get('/logout', function(req, res) {
             delete req.session.auth;
-            res.send('Logged out');
+            res.send('<html><body>Logged out!<br/><br/><a href="/">Back to Home</a></body></html>');
         });
 
 var pool = new Pool(config);
-app.get('/test-db', function(req, res) {
+/*app.get('/test-db', function(req, res) {
     //make a select request
     //return a result with a response
     pool.query('SELECT * from test', function(err, result){
@@ -150,6 +150,8 @@ app.get('/test-db', function(req, res) {
      }  
     });
     });
+    */
+    
     
 var counter = 0;
 app.get('/counter', function(req, res) {
