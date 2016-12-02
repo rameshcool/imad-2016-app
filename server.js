@@ -190,11 +190,24 @@ var pool = new Pool(config);
                res.status(404).send('Article not found');
            } else {
                var articleId = result.rows[0].id;
+               //Now insert the right comment for this article
+               pool.query("INSERT INTO comment(comment, article_id, user_id) VALUES ($1, $2, $3)",
+               [req.body.comment, articleId, req.session.auth.userId], function(err, result) {
+                  if (err) {
+               res.status(500).send(err.toString());
+           } else {
+               res.status(200).send("Comment inserted!");
+           }
+               });
            }
                }
            });
-       }
+           
+       } else {
+           res.status(403).send('Only logged in users can comment');
+              }
     });
+    
     
 var counter = 0;
 app.get('/counter', function(req, res) {
