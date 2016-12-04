@@ -1,4 +1,15 @@
 console.log('Loaded!');
+function loadLoginForm () {
+    var loginHtml ='
+    <h3>Login/Register to unlock awesome features<h3/>
+    <input type="text' id="username" placeholder="username" />
+    <input type="password" id="password" />
+    <br/><br/>
+    <input type="submit" id="login_btn" value="Login" />
+    <input type="submit" id="register_btn" value="Register" />
+   ';
+   
+}
 
 /*//change the text of the main-text div
 var element = document.getElementById("main-text");
