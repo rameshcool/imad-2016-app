@@ -8,7 +8,7 @@ function loadLoginForm () {
     <input type="submit" id="login_btn" value="Login" />
     <input type="submit" id="register_btn" value="Register" />
    ';
-   
+   document.getElementById('login_area').innerHTML = loginHtml;
 }
 
 /*//change the text of the main-text div
