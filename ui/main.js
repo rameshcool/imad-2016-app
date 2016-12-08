@@ -93,5 +93,23 @@ submit.onclick = function() {
      submit.value = 'Logging in....';
 };
 
+var register = document.getElementById('register_btn');
+register.onclick = function () {
+    // Create a request object
+    var request = new XMLHttpRequest();
+    
+    //Capture the response and store it in a variable
+     request.onreadystatechange = function() {
+      if (request.readyState === XMLHttpRequest.DONE) {
+          //Take some action
+          if(request.status === 200) {
+          alert('User created Successfully');
+          register.value = 'Registered!';
+} else {
+    alert('Could not register the user');
+    register.value = 'Register';
+}
+}
+};
 
     
