@@ -7,8 +7,9 @@ function loadLoginForm () {
     <br/><br/>
     <input type="submit" id="login_btn" value="Login" />
     <input type="submit" id="register_btn" value="Register" />
-   ';
-   document.getElementById('login_area').innerHTML = loginHtml;
+    ';
+    
+    document.getElementById('login_area').innerHTML = loginHtml;
    
 //Submit username/password to login
 
@@ -85,7 +86,7 @@ register.onclick = function () {
  function loadLoggedInUser (username) {
      var loginArea = document.getElementById('login_area');
      loginArea.innerHTML = '<h3> Hi <i>${username}</i></h3>
-     <a href = "/logout">Logout</a>';
+                            <a href = "/logout">Logout</a>';
  }
  
  function loadLogin () {
@@ -119,10 +120,10 @@ register.onclick = function () {
           <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
           (${articleData[i].date.split('T')[0]})</li>';
       }
-      content += "</ul>"
+      content += "</ul>";
       articles.innerHTML = content;
  } else {
-     articles.innerHTML('Oops! Could not load all articles!')
+     articles.innerHTML('Oops! Could not load all articles!');
  }
       }
      };
