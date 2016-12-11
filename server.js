@@ -252,7 +252,7 @@ app.get('/ui/: filename', function (req, res) {
 
 
 app.get('/ui/photo.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  res.sendFile(path.join(__dirname, 'ui', 'photo.jpg'));
 });
 
 
