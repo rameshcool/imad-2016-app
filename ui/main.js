@@ -118,6 +118,7 @@ register.onclick = function () {
           content += '<li>';
           '<a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>';
            '(${articleData[i].date.split('T')[0]})</li>';
+           
       }
       content += "</ul>";
       articles.innerHTML = content;
