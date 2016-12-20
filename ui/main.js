@@ -77,8 +77,8 @@ register.onclick = function () {
  
  function loadLoggedInUser (username) {
      var loginArea = document.getElementById('login_area');
-     loginArea.innerHTML = '<h3> Hi <i>${username}</i></h3>
-                            <a href = "/logout">Logout</a>';
+     loginArea.innerHTML = '<h3> Hi <i>${username}</i></h3><a href = "/logout">Logout</a>';
+                
  }
  
  function loadLogin () {
@@ -108,10 +108,8 @@ register.onclick = function () {
       var content = '<ul>';
       var articleData = JSON.parse(this.responseText);
       for (var i=0; i<articleData.length; i++) {
-          content += '<li>
-          <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-           (${articleData[i].date.split('T')[0]})</li>';
-           
+  content += '<li> <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>(${articleData[i].date.split('T')[0]})</li>';
+      
       }
       content += "</ul>";
       articles.innerHTML = content;
