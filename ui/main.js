@@ -1,12 +1,12 @@
 function loadLoginForm () {
-         var loginHtml =  '
+         var loginHtml =  `
              <h3>Login/Register to unlock awesome features!</h3>
              <input type="text" id="username" placeholder="username" /> 
              <input type="password" id="password" />
              <br/><br/>
              <input type="submit" id="login_btn" value="Login" />
              <input type="submit" id="register_btn" value="Register" /> 
-             ';
+             `;
          
    
     document.getElementById('login_area').innerHTML = loginHtml;
@@ -85,10 +85,10 @@ register.onclick = function () {
  
  function loadLoggedInUser (username) {
      var loginArea = document.getElementById('login_area');
-     loginArea.innerHTML = '
+     loginArea.innerHTML = `
            <h3> Hi <i>${username}</i></h3>
            <a href = "/logout">Logout</a>
-     ';
+     `;
                 
  }
  
@@ -119,9 +119,9 @@ register.onclick = function () {
       var content = '<ul>';
       var articleData = JSON.parse(this.responseText);
       for (var i=0; i<articleData.length; i++) {
-          content += '<li>
+          content += `<li>
           <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-          (${articleData[i].date.split('T')[0]})</li>';
+          (${articleData[i].date.split('T')[0]})</li>`;
   
       }
       content += "</ul>";
