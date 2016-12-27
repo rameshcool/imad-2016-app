@@ -3,13 +3,13 @@
 var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
-    var commentFormHtml = '
+    var commentFormHtml = `
     <h5>Submit a comment<h5/>
     <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
     <br/>
     <input type="submit" id="submit" value="Submit" />
     <br/>
-    ';
+    `;
     
     document.getElementById('comment_form').innerHTML = commentFormHtml;
     
@@ -76,12 +76,12 @@ function escapeHTML (text) {
               var commentsData = JSON.parse(this.responseText);
               for (var i=0; i < commentsData.length; i++) {
                  var time = new Date(commentsData[i].timestamp);
-                 content += '<div class="comment">
+                 content += `<div class="comment">
                  <p>${escapeHTML(commentsData[i].comment)}<p/>
                  <div class="commenter">
                  ${commentsData[i].username} - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()}
                  </div>
-                 </div>';
+                 </div>`;
               }
               comments.innerHTML = content;
           } else {
