@@ -130,10 +130,17 @@ app.get('/hash/:input', function(req, res) {
         
         app.get('/check-login', function(req, res) {
             if (req.session && req.session.auth && req.session.auth.userId) {
-                res.send('You are logged in:' + req.session.auth.userId.toString());
-                
+                // Load the user object
+                pool.query('SELECT * FROM "users" WHERE id = $1', [req.session.auth.userId], function(err, result) {
+                    if (err) {
+                        res.status(500).send(err.toString());
+                    } else {
+                        res.send(result.rows[0].username);
+                    }
+                });
+           
                 } else {
-                    res.send('You are not logged in');
+                    res.status(400).send('You are not logged in');
                 }
         });
         
@@ -143,19 +150,7 @@ app.get('/hash/:input', function(req, res) {
         });
 
 var pool = new Pool(config);
-/*app.get('/test-db', function(req, res) {
-    //make a select request
-    //return a result with a response
-    pool.query('SELECT * from test', function(err, result){
-     if (err) {
-         res.status(500).send(err.toString());
-     } else {
-         res.send(JSON.stringify(result.rows));
-     }  
-    });
-    });
-    */
-    
+
     app.get('/get-articles', function(req, res) {
        // make a select request
        // return a response with the results
@@ -210,6 +205,17 @@ var pool = new Pool(config);
        } else {
            res.status(403).send('Only logged in users can comment');
               }
+    });
+    
+    app.get('/articles/:articleName', function(req, res) {
+       // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
+       pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
+           if (err) {
+               res.status(500).send(err.toString());
+           } else {
+               if (result)
+           }
+       });
     });
     
     
