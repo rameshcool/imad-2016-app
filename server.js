@@ -125,13 +125,13 @@ app.get('/hash/:input', function(req, res) {
         
                  } else {
              res.send(403).send('username/password is invalid');
+           }
          }
-         }
-            }    
+       }    
     });
-        });
-        
-        app.get('/check-login', function(req, res) {
+ });
+ 
+       app.get('/check-login', function(req, res) {
             if (req.session && req.session.auth && req.session.auth.userId) {
                 // Load the user object
                 pool.query('SELECT * FROM "users" WHERE id = $1', [req.session.auth.userId], function(err, result) {
@@ -200,14 +200,14 @@ var pool = new Pool(config);
            } else {
                res.status(200).send("Comment inserted!");
            }
-               });
-           }
-               }
-           });
+         });
+      }
+     }
+  });
            
-       } else {
-           res.status(403).send('Only logged in users can comment');
-              }
+  } else {
+       res.status(403).send('Only logged in users can comment');
+        }
     });
     
     app.get('/articles/:articleName', function(req, res) {
