@@ -1,4 +1,3 @@
-
 // rameshcool.imad.hasura-app.io/articles/article-one will result in article-one
 var currentArticleTitle = window.location.pathname.split('/')[2];
 
