@@ -193,7 +193,7 @@ var pool = new Pool(config);
            } else {
                var articleId = result.rows[0].id;
                //Now insert the right comment for this article
-               pool.query("INSERT INTO comment(comment, article_id, user_id) VALUES ($1, $2, $3)",
+               pool.query('INSERT INTO comment(comment, article_id, user_id) VALUES ($1, $2, $3)',
                [req.body.comment, articleId, req.session.auth.userId], function(err, result) {
                   if (err) {
                res.status(500).send(err.toString());
